@@ -4,13 +4,13 @@ import { useState } from 'react'
 import { supabase } from '@/lib/supabase'
 
 const tips = [
-  "Tip: Use relational organizing. The most persuasive messenger is someone people already trust.",
-  "Tip: Always capture stories. Data tells you what happened, stories tell you why it mattered.",
-  "Tip: When organizing an event, the follow-up matters more than the invite.",
-  "Tip: If members are confused, simplify the workflow before writing more instructions.",
-  "Tip: People stay in movements because of relationships, not dashboards.",
-  "Tip: Track what works, but never lose the human connection behind the metrics.",
-  "Tip: Every organizer should build one system that saves their future self time.",
+  "Organizer Insight: Start With Three. Not Thirty.Movements don’t begin with momentum. They begin with three people in a living room who care. Your challenge: Call three people this week. That’s it. Start small. Build strong.",
+  "Organizer Insight: Always capture stories. Data tells you what happened, stories tell you why it mattered.",
+  "Organizer Insight: When organizing an event, the follow-up matters more than the invite. Follow the 48 hour rule",
+  "Organizer Insight: If members are confused, simplify the process before writing more instructions.",
+  "Organizer Insight: People stay in movements because of relationships, not dashboards.",
+  "Organizer Insight: Track what works, but never lose the human connection behind the metrics.",
+  "Organizer Insight: Every organizer should build one system that saves their future self time.",
 ]
 
 type Resource = {
@@ -34,9 +34,7 @@ type Person = {
   host_potential: boolean | null
 }
 
-const today = new Date()
-const dayIndex = today.getDate() % tips.length
-const tipOfTheDay = tips[dayIndex]
+const tipOfTheDay = tips[Math.floor(Math.random() * tips.length)]
 
 export default function Home() {
   const [prompt, setPrompt] = useState('')
