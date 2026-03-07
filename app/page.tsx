@@ -92,9 +92,20 @@ export default function Home() {
     <main className="min-h-screen bg-white text-slate-900 p-10">
       <div className="max-w-4xl mx-auto space-y-6">
 
-        <h1 className="text-4xl font-bold">
-          Harper
-        </h1>
+       
+        <div className="flex items-center gap-6">
+           <div>
+    <p className="text-2xl font-bold">Hi, [[dynamic name]]</p>
+    <p className="text-sm text-slate-500 mt-1 italic">"How can I help!"</p>
+  </div>
+  <img
+    src="/harper_icon.png"
+    alt="Harper organizing assistant"
+    className="w-24 h-24 rounded-xl shadow"
+  />
+
+ 
+</div>
 
         <p className="text-gray-500">
           Your internal organizing copilot
@@ -103,17 +114,19 @@ export default function Home() {
         <div className="text-sm text-slate-500">
           Try asking:
           <br />
-          • find members near Richmond interested in education
+          • where is the SOP for requesting a new monday board?
+            <br />
+          • find members near Richmond interested in education?
           <br />
-          • find volunteers in Loudoun interested in school boards
+          • find volunteers in Loudoun interested in school boards?
           <br />
-          • where is the SOP for requesting a new monday board
+          
         </div>
 
         <textarea
           className="w-full border rounded-lg p-4"
           rows={4}
-          placeholder="Ask Harper where an SOP lives, or find members near Richmond interested in education..."
+          placeholder="Where do I find..."
           value={prompt}
           onChange={(e) => setPrompt(e.target.value)}
         />
