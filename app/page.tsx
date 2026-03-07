@@ -122,11 +122,7 @@ export default function Home() {
           />
         </div>
 
-        <p className="text-gray-500">
-          Your internal organizing copilot
-        </p>
-
-        <div className="text-sm text-slate-500">
+               <div className="text-sm text-slate-500">
           Try asking:
           <br />
           • where is the SOP for requesting a new monday board?
