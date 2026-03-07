@@ -10,7 +10,8 @@ const tips = [
   "Organizer Insight: If members are confused, simplify the process before writing more instructions.",
   "Organizer Insight: People stay in movements because of relationships, not dashboards.",
   "Organizer Insight: Track what works, but never lose the human connection behind the metrics.",
-  "Organizer Insight: Every organizer should build one system that saves their future self time.",
+  "Organizer Insight: Local Stories Beat National Noise. Cable news might set the mood, but school boards set policy. Your community story carries more persuasive weight than a viral headline. <b>Your challenge</b>: Tie every national issue back to one real local example. ",
+  "Organizer Insight: Assume Good Faith Until It’s Proven Otherwise. You will meet confused people. You will meet misinformed people. Most are not villains, they’re overwhelmed. <b>Your challenge</b>: Start conversations with curiosity before correction. ",
 ]
 
 type Resource = {
