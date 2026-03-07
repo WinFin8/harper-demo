@@ -108,6 +108,8 @@ export default function Home() {
           <div>
               <div className="mt-4 p-3 rounded-lg bg-gray-100 border text-sm text-gray-700 max-w-xl">
               💡 {tipOfTheDay}
+              <br />
+               <br />
             </div>
             <p className="text-2xl font-bold">Hi, [[dynamic name]]</p>
             <p className="text-sm text-slate-500 mt-1 italic">How can I help?</p>
