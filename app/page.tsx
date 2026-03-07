@@ -106,13 +106,13 @@ export default function Home() {
       <div className="max-w-4xl mx-auto space-y-6">
         <div className="flex items-center gap-6">
           <div>
+              <div className="mt-4 p-3 rounded-lg bg-gray-100 border text-sm text-gray-700 max-w-xl">
+              💡 {tipOfTheDay}
+            </div>
             <p className="text-2xl font-bold">Hi, [[dynamic name]]</p>
             <p className="text-sm text-slate-500 mt-1 italic">How can I help?</p>
 
-            <div className="mt-4 p-3 rounded-lg bg-gray-100 border text-sm text-gray-700 max-w-xl">
-              💡 {tipOfTheDay}
-            </div>
-          </div>
+                    </div>
 
           <img
             src="/harper_icon.png"
