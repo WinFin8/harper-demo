@@ -3,6 +3,16 @@
 import { useState } from 'react'
 import { supabase } from '@/lib/supabase'
 
+const tips = [
+  "Tip: Use relational organizing. The most persuasive messenger is someone people already trust.",
+  "Tip: Always capture stories. Data tells you what happened, stories tell you why it mattered.",
+  "Tip: When organizing an event, the follow-up matters more than the invite.",
+  "Tip: If members are confused, simplify the workflow before writing more instructions.",
+  "Tip: People stay in movements because of relationships, not dashboards.",
+  "Tip: Track what works, but never lose the human connection behind the metrics.",
+  "Tip: Every organizer should build one system that saves their future self time.",
+]
+
 type Resource = {
   id: number
   title: string
@@ -23,6 +33,10 @@ type Person = {
   leadership_score: number | null
   host_potential: boolean | null
 }
+
+const today = new Date()
+const dayIndex = today.getDate() % tips.length
+const tipOfTheDay = tips[dayIndex]
 
 export default function Home() {
   const [prompt, setPrompt] = useState('')
@@ -91,21 +105,22 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white text-slate-900 p-10">
       <div className="max-w-4xl mx-auto space-y-6">
-
-       
         <div className="flex items-center gap-6">
-           <div>
-    <p className="text-2xl font-bold">Hi, [[dynamic name]]</p>
-    <p className="text-sm text-slate-500 mt-1 italic">"How can I help!"</p>
-  </div>
-  <img
-    src="/harper_icon.png"
-    alt="Harper organizing assistant"
-    className="w-24 h-24 rounded-xl shadow"
-  />
+          <div>
+            <p className="text-2xl font-bold">Hi, [[dynamic name]]</p>
+            <p className="text-sm text-slate-500 mt-1 italic">How can I help?</p>
 
- 
-</div>
+            <div className="mt-4 p-3 rounded-lg bg-gray-100 border text-sm text-gray-700 max-w-xl">
+              💡 {tipOfTheDay}
+            </div>
+          </div>
+
+          <img
+            src="/harper_icon.png"
+            alt="Harper organizing assistant"
+            className="w-24 h-24 rounded-xl shadow"
+          />
+        </div>
 
         <p className="text-gray-500">
           Your internal organizing copilot
@@ -115,12 +130,11 @@ export default function Home() {
           Try asking:
           <br />
           • where is the SOP for requesting a new monday board?
-            <br />
+          <br />
           • find members near Richmond interested in education?
           <br />
           • find volunteers in Loudoun interested in school boards?
           <br />
-          
         </div>
 
         <textarea
@@ -166,7 +180,6 @@ export default function Home() {
 
         {mode === 'people' && people.length > 0 && (
           <div className="space-y-4">
-
             <h2 className="text-xl font-semibold">People</h2>
 
             <div className="bg-slate-50 border rounded-lg p-3 text-sm text-slate-600">
@@ -214,7 +227,6 @@ export default function Home() {
             ))}
           </div>
         )}
-
       </div>
     </main>
   )
